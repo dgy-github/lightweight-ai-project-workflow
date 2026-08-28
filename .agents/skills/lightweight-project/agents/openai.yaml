@@ -1,0 +1,4 @@
+interface:
+  display_name: "轻量项目协作"
+  short_description: "把普通想法按讨论、规划、执行、验收和复盘推进成小项目"
+  default_prompt: "使用 $lightweight-project 帮我把这个想法作为一个小项目推进。"

@@ -1,0 +1,23 @@
+[project]
+name = "lightweight-ai-project-workflow"
+version = "0.1.0"
+description = "A lightweight, evidence-based AI collaboration workflow for everyday projects."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+evaluate-reuse-candidate = "scripts.evaluate_reuse_candidate:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
