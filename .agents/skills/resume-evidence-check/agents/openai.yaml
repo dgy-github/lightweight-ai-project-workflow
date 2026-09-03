@@ -1,0 +1,4 @@
+interface:
+  display_name: "简历事实核验"
+  short_description: "核对简历经历与 AI Agent 技术表述，防止夸大和编造"
+  default_prompt: "使用 $resume-evidence-check 检查这版简历是否每条都有事实依据。"

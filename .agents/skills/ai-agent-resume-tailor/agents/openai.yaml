@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Agent 简历定制"
+  short_description: "基于真实经历定制 AI Agent 岗位简历，不编造技术和成果"
+  default_prompt: "使用 $ai-agent-resume-tailor 根据这个 JD 定制我的 AI Agent 简历。"

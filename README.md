@@ -48,6 +48,21 @@ AI 将按下面的流程协作：
 PR 描述。它们已具备可运行结构，但仍需真实历史任务回放才能标记为成熟；也不意味着
 普通项目必须使用工程技能。
 
+## AI Agent 求职技能组
+
+针对 AI Agent 岗位，项目提供一条事实约束优先的求职流程：
+
+```text
+职位描述分析 -> AI Agent 简历定制 -> 简历事实核验 -> 投递草稿
+```
+
+- `job-description-analyzer`：拆解职责、技术要求和岗位匹配；
+- `ai-agent-resume-tailor`：基于主简历真实经历进行针对性改写；
+- `resume-evidence-check`：检查技术、指标和成果是否有事实来源；
+- `job-application-draft`：生成等待人工确认的投递包，不自动提交。
+
+完整使用边界见 [AI Agent 求职流程](docs/AI_AGENT_JOB_WORKFLOW.md)。
+
 ## 项目原则
 
 - 先确认目标和边界，再大规模执行；

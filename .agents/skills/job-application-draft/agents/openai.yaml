@@ -1,0 +1,4 @@
+interface:
+  display_name: "投递草稿生成"
+  short_description: "生成经事实核验、等待人工确认的求职投递包"
+  default_prompt: "使用 $job-application-draft 为这个岗位生成投递草稿。"

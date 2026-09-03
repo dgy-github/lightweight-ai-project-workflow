@@ -1,0 +1,4 @@
+interface:
+  display_name: "职位描述分析"
+  short_description: "提取 AI Agent 岗位要求并与真实经历逐项匹配"
+  default_prompt: "使用 $job-description-analyzer 分析这个 AI Agent 岗位是否适合我。"
