@@ -193,6 +193,12 @@ def build():
         "Agent 编排：用 LangGraph StateGraph 编排流程，将 LLM 限制在理解、解释和辅助决策，关键动作由规则、权限和状态机约束。",
         "安全与质量：采用 governance → preview/dry-run → execute → verify 链路，配合四级权限、幂等、回读校验、Langfuse、30 条 Golden Cases、LLM-as-judge 和 Playwright E2E。",
     ], "Python、LangGraph、SQL、Qdrant、BGE/fastembed、Langfuse、Streamlit。")
+    add_project(doc, "Protocol AI｜临床方案生成 RAG 框架优化", "新风新研", "2026.08.07-2026.09.04", "RAG 框架优化｜技术预研，未上线生产", "在临床试验方案 AI 写作平台上优化知识检索与证据上下文链路，并沉淀跨场景可复用的 RAG 工程方法。", [
+        "框架优化：围绕文档切片、Embedding、pgvector 向量检索、章节主题词增强、关键词兜底和上下文预算，优化知识库到生成模型的检索链路。",
+        "证据治理：完善章节级检索、来源角色、引用追溯和证据边界，避免把未选资料或模型常识误当成可验证医学结论。",
+        "能力复用：将排产 Agent 的 SQL 优先、Hybrid/Composite/GraphRAG 路由，以及面料项目的向量 + 业务属性混合检索、badcase 评测方法抽象为可复用策略。",
+        "项目边界：Protocol AI 本身属于框架优化和演示验证，未宣称医疗生产上线；真实生产落地证据来自排产 Agent 与面料检索系统。",
+    ], "FastAPI、Python、Qwen Embedding、pgvector、PostgreSQL、RAG、证据追溯。")
     add_project(doc, "面料图像识别与检索系统", "浙江思维特数字科技有限公司", "2025.10-2026.04", "项目负责人｜带领 2-3 人小组", "为面料研发与选样提供从图片采集、特征提取、向量检索到属性筛选的多模态检索能力。", [
         "数据规模：接入 1,522 个面料对象、4,236 张图片，处理约 14GB 图片数据；组合百度图像检索 API 与本地向量能力。",
         "检索策略：将图像向量相似度与成分、组织、颜色、纹理、克重等业务属性组合，支持结果解释与人工复核。",
@@ -215,7 +221,6 @@ def build():
         "以 issuer + subject 建立身份映射，通过“身份 → 有效角色 → 权限点 → 资源范围”确定性 SQL 路径完成授权判定。",
         "落地 Logto OIDC/JWT 回调、JWKS 验签、权限同步和授权审计；启动自检、刷新失败撤销和管理写操作恢复采用 Fail-closed 策略。",
     ], "FastAPI、SQLAlchemy、Alembic、PostgreSQL/SQLite、Logto、PyJWT。", compact=True)
-    page_break(doc)
     add_section(doc, "To B 平台与架构项目（续）")
     add_project(doc, "标准版 SRM｜Java 21 技术升级", "浙江思维特数字科技有限公司", "2026.01-2026.04", "方案负责人 / 核心开发", "在供应链系统中推进 Java 21 升级、查询链路优化和容器化交付。", [
         "使用 Virtual Threads、Record、Pattern Matching 重构部分查询与 DTO，保持接口契约和业务规则稳定。",
