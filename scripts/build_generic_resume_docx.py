@@ -1,6 +1,7 @@
 """Build a general-purpose resume for Java backend, technical leadership and AI engineering roles."""
 
 from pathlib import Path
+import os
 
 from docx import Document
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -9,7 +10,8 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 
-OUT = Path(r"D:/github_dgy/output/docx/狄广宇-通用研发技术负责人版.docx")
+AGENT_FOCUS = os.environ.get("AGENT_FOCUS") == "1"
+OUT = Path(r"D:/github_dgy/output/docx/狄广宇-Agent开发版.docx" if AGENT_FOCUS else r"D:/github_dgy/output/docx/狄广宇-通用研发技术负责人版.docx")
 FONT = "Microsoft YaHei"
 NAVY = RGBColor(20, 55, 89)
 BLUE = RGBColor(35, 103, 153)
@@ -137,7 +139,7 @@ def build():
     # Quiet running furniture.
     hp = sec.header.paragraphs[0]
     hp.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    hr = hp.add_run("狄广宇  ·  Java 后端 / 技术负责人 / AI 应用工程化")
+    hr = hp.add_run("狄广宇  ·  AI Agent 开发 / RAG / Agent 工程化" if AGENT_FOCUS else "狄广宇  ·  Java 后端 / 技术负责人 / AI 应用工程化")
     font(hr, 8, False, MUTED)
     fp = sec.footer.paragraphs[0]
     fp.alignment = WD_ALIGN_PARAGRAPH.CENTER
@@ -151,7 +153,7 @@ def build():
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(0)
     p.paragraph_format.space_after = Pt(2)
-    r = p.add_run("Java 后端 · 技术负责人 · To B 平台 · AI 应用工程化")
+    r = p.add_run("AI Agent 开发 · RAG · Workflow · 工具调用 · 工程化" if AGENT_FOCUS else "Java 后端 · 技术负责人 · To B 平台 · AI 应用工程化")
     font(r, 13, False, BLUE)
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(1)
@@ -166,7 +168,8 @@ def build():
     p = doc.add_paragraph()
     p.paragraph_format.space_after = Pt(4)
     p.paragraph_format.line_spacing = 1.12
-    r = p.add_run("以 Java 后端与企业级系统交付为主线，能够把复杂业务拆成可配置、可扩展、可观测的产品能力；近年将 RAG、Agent、Workflow、工具调用和评测机制接入真实业务，适合技术负责人、Java 后端负责人、To B 平台研发及 AI 应用工程化岗位。")
+    positioning = ("以 AI Agent 应用开发与工程化落地为主线，能够把业务目标拆成可控的 Agent、RAG、Workflow 和工具调用链路；具备从场景建模、路由编排、权限与安全边界，到评测、观测、回放和交付验收的完整经验，适合 AI Agent 开发、AI 应用工程化和 Agent 平台研发岗位。" if AGENT_FOCUS else "以 Java 后端与企业级系统交付为主线，能够把复杂业务拆成可配置、可扩展、可观测的产品能力；近年将 RAG、Agent、Workflow、工具调用和评测机制接入真实业务，适合技术负责人、Java 后端负责人、To B 平台研发及 AI 应用工程化岗位。")
+    r = p.add_run(positioning)
     font(r, 10.2, False, INK)
     add_bullet(doc, "交付闭环：从需求沟通、方案设计、数据模型、接口与任务拆解，到开发、测试、上线、监控和持续迭代。")
     add_bullet(doc, "工程底座：Spring Boot、MyBatis、Spring Cloud、MySQL/Redis，覆盖微服务、数据同步、权限、幂等、消息和性能优化。")
