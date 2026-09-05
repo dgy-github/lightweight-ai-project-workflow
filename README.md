@@ -63,6 +63,8 @@ PR 描述。它们已具备可运行结构，但仍需真实历史任务回放�
 
 完整使用边界见 [AI Agent 求职流程](docs/AI_AGENT_JOB_WORKFLOW.md)。
 
+本人的项目面试知识库示例见 [AI Agent 开发面试个人知识库](projects/agent-interview-knowledge-base/knowledge-base.md)，配套题目索引见 [项目相关面试题库](projects/agent-interview-knowledge-base/question-bank.md)。
+
 ## 项目原则
 
 - 先确认目标和边界，再大规模执行；
